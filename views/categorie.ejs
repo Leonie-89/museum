@@ -1,0 +1,38 @@
+<% include header %>
+<% include banner %>
+
+<div id="homebox">
+<span id="titel"><h2><a href="/"><< Home</a></h2>
+</div>
+
+<h1>Paintings in <%- categorieen[id] %></h1>
+
+
+  <% for (var i = 0; i < items.length; i++) { %>
+    <% if (items[i].categorieen.indexOf(categorieen[id]) !== -1) { %>
+
+      <div id="kop">
+          <h2>
+            <a href=/items/<%- items[i].id %>><%- items[i].titel %></a>
+          </h2>
+      </div>
+
+      <div id="kunstwerk">
+            <img src="/img/<%- items[i].afbeeldings %>" alt="<%- items[i].titel %>">
+      <div id="omschrijving">
+
+        <h3>Artist  -  <%- items[i].Schilder %></h3>
+        <h3>Year  -  <%- items[i].Jaar%></h3>
+        <h3>Exhibition - <%- items[i].tentoonstelling %></h3>
+
+        <h3>From <%- items[i].datum %> in <%- items[i].categorieen %></h3>
+        <span id="verder_terug"><h3><a href=/items/<%- items[i].id %>>Read More >></a></h3></span>
+          </div>
+  </div>
+
+    <% } %>
+  <% } %>
+
+
+
+

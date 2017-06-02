@@ -1,0 +1,45 @@
+<% include header %>
+<% include banner %>
+
+<div id="homebox">
+      <span id="titel"><h2><a href="/"> << Home </a></h2></span>
+</div>
+
+
+<div id="container">
+ 
+  <div id="kop">
+    <h2>
+      <%- item.Schilder %>  I  <%- item.titel %>
+    </h2>
+  </div>
+
+  <div id="kunstwerk">
+    
+    <img src="/img/<%- item.afbeeldingl %>" alt="<%- item.titel %>">
+
+    <div id="omschrijving">
+
+          <h2>Description</h2>
+
+          <p>
+            <%- item.body %>
+          </p>
+
+          <p>You can see this painting in 
+
+            <% for (var i = 0; i < item.categorieen.length; i++) { %>
+              <a href="/categorieen/<%- i %>"><%- item.categorieen[i] %></a><% if (i+1< item.categorieen.length){ %>, <% } %>
+            <% } %>
+            from <%- item.datum %>
+          </p>
+
+          <% include disqus %>
+        </div>
+
+
+    </div>
+    </div>
+
+
+<% include footer %>
